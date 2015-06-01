@@ -1,2 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<experiences />
+<experiences>
+  <experience id="1">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>what ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.png</url>
+      <quesiton>what ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>what ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>255/51/102</couleur>
+        <taille>Arial</taille>
+      </emplacement>
+      <ecran type="fixe">
+        <couleur>255/51/255</couleur>
+        <fixe>13</fixe>
+      </ecran>
+      <consigne>
+        <text>sqdsqd qsdqs dqs qsd qsd</text>
+        <fons>Arial Gras</fons>
+        <couleur>0/0/255</couleur>
+        <taille>Arial</taille>
+      </consigne>
+    </config>
+  </experience>
+</experiences>
