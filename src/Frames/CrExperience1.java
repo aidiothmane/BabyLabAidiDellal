@@ -568,6 +568,11 @@ public class CrExperience1 extends javax.swing.JFrame {
         jLabel23.setText("ID:");
 
         jButton11.setText("Vérifier");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1311,7 +1316,7 @@ public class CrExperience1 extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here
-      if(!jList1.getSelectedValuesList().isEmpty() && !jTextField2.getText().isEmpty() && !jLabel7.getText().isEmpty() && !jTextField1.isEditable()){
+      if(!jList1.getSelectedValuesList().isEmpty() && !jTextField2.getText().isEmpty() && !jLabel7.getText().isEmpty() && !jTextField1.isEnabled()){
       for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
             
         
@@ -1476,7 +1481,7 @@ public class CrExperience1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
      
-       if(!jTextField1.isEditable() && go ==1 ) {
+       if(!jTextField1.isEnabled()&& go ==1 ) {
        int option = JOptionPane.showConfirmDialog(rootPane, "Voulez-vous enregistré ?");
        if( option == 0){
             try
@@ -1577,7 +1582,7 @@ public class CrExperience1 extends javax.swing.JFrame {
            if(!jde.getText().isEmpty() && !ja.getText().isEmpty() && !jpas.getText().isEmpty())
         nombre = (Integer.parseInt(ja.getText()) - Integer.parseInt(jde.getText()) + 1)/ Integer.parseInt(jpas.getText());
            if(nombre > 0){
-         if(!jList1.getSelectedValuesList().isEmpty() && !jTextField2.getText().isEmpty() && !jde.getText().isEmpty() && !ja.getText().isEmpty() && !jpas.getText().isEmpty()&& !jTextField1.isEditable()){    
+         if(!jList1.getSelectedValuesList().isEmpty() && !jTextField2.getText().isEmpty() && !jde.getText().isEmpty() && !ja.getText().isEmpty() && !jpas.getText().isEmpty()&& !jTextField1.isEnabled()){    
         if(jRadioButton18.isSelected()){
             for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
             tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/numerique/avec"+"/"+jde.getText()+"/"+ja.getText()+"/"+jpas.getText()+newline+"\n";
@@ -1770,7 +1775,7 @@ public class CrExperience1 extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-        if(jList1.getSelectedValuesList().size() != 0 && jTextField2.getText()!="" && !jTextField1.isEditable()){
+        if(jList1.getSelectedValuesList().size() != 0 && jTextField2.getText()!="" && !jTextField1.isEnabled()){
         for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
             tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/"+newline+"\n";
             Element stimule = new Element("stimulé");
@@ -1799,6 +1804,24 @@ public class CrExperience1 extends javax.swing.JFrame {
     private void jRadioButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton18ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton18ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        if(!jTextField1.getText().isEmpty()){
+            if(verifier(jTextField1.getText()) == 0){
+                jTextField1.setEnabled(false);
+                ident = new Attribute("id",jTextField1.getText());
+                experience.setAttribute(ident);
+                
+            }
+            else{
+            JOptionPane.showMessageDialog(rootPane, jTextField1.getText()+" existe, veulliez le changer SVP!");
+            jTextField1.setText("");
+        }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Entre l'ID et verifiez SVP!");
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1994,8 +2017,9 @@ public class CrExperience1 extends javax.swing.JFrame {
         racine = document.getRootElement();
         if( ! racine.getChildren("experience").isEmpty()){
            List<Element> childs = racine.getChildren("experience");
-           for(int i=0; i< childs.size();i++){
-               System.out.println(childs.get(i).getAttribute("id").getValue());
+           System.out.println(childs.size());
+           for(int i=0; i< childs.size()-1;i++){
+               
                if(childs.get(i).getAttribute("id").getValue().equals(x)){
                    test = 1;
                }

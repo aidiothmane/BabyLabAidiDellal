@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <experiences>
-  <experience id="1">
-    <stimulé type="Echelle" media="image">
+  <experience id="othmane">
+    <stimulé type="RadioButton" media="image">
       <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
-      <quesiton>what ?</quesiton>
-      <de>0</de>
-      <a>10</a>
-      <pas>1</pas>
-      <detail textnumerique="numerique" affichage="avec" />
+      <quesiton>sdqs</quesiton>
+      <reponse>qsd</reponse>
+      <reponse>sd</reponse>
     </stimulé>
-    <stimulé type="Echelle" media="image">
+    <stimulé type="RadioButton" media="image">
       <url>Exp1/Images/emoticone.jpg</url>
-      <quesiton>what ?</quesiton>
-      <de>0</de>
-      <a>10</a>
-      <pas>1</pas>
-      <detail textnumerique="numerique" affichage="avec" />
+      <quesiton>sdqs</quesiton>
+      <reponse>qsd</reponse>
+      <reponse>sd</reponse>
     </stimulé>
-    <stimulé type="Echelle" media="image">
+    <stimulé type="RadioButton" media="image">
       <url>Exp1/Images/retour.png</url>
-      <quesiton>what ?</quesiton>
-      <de>0</de>
-      <a>10</a>
-      <pas>1</pas>
-      <detail textnumerique="numerique" affichage="avec" />
+      <quesiton>sdqs</quesiton>
+      <reponse>qsd</reponse>
+      <reponse>sd</reponse>
     </stimulé>
     <config>
       <emplacement>
@@ -40,54 +34,10 @@
       </consigne>
     </config>
   </experience>
-  <experience id="2">
-    <stimulé type="Echelle" media="image">
-      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
-      <quesiton>sqdqsd</quesiton>
-      <de>1</de>
-      <a>8</a>
-      <pas>1</pas>
-      <detail textnumerique="text" affichage="avec">
-        <rep>aaa</rep>
-        <rep>zzzz</rep>
-        <rep>eeee</rep>
-        <rep>rrrr</rep>
-        <rep>tttt</rep>
-        <rep>yyyy</rep>
-        <rep>uuuu</rep>
-      </detail>
-    </stimulé>
-    <stimulé type="Echelle" media="image">
+  <experience id="raz eaz ">
+    <stimulé type="Commentaire" media="image">
       <url>Exp1/Images/emoticone.jpg</url>
-      <quesiton>sqdqsd</quesiton>
-      <de>1</de>
-      <a>8</a>
-      <pas>1</pas>
-      <detail textnumerique="text" affichage="avec">
-        <rep>aaa</rep>
-        <rep>zzzz</rep>
-        <rep>eeee</rep>
-        <rep>rrrr</rep>
-        <rep>tttt</rep>
-        <rep>yyyy</rep>
-        <rep>uuuu</rep>
-      </detail>
-    </stimulé>
-    <stimulé type="Echelle" media="image">
-      <url>Exp1/Images/retour.png</url>
-      <quesiton>sqdqsd</quesiton>
-      <de>1</de>
-      <a>8</a>
-      <pas>1</pas>
-      <detail textnumerique="text" affichage="avec">
-        <rep>aaa</rep>
-        <rep>zzzz</rep>
-        <rep>eeee</rep>
-        <rep>rrrr</rep>
-        <rep>tttt</rep>
-        <rep>yyyy</rep>
-        <rep>uuuu</rep>
-      </detail>
+      <quesiton>ddsqd</quesiton>
     </stimulé>
     <config>
       <emplacement>
@@ -104,58 +54,11 @@
       </consigne>
     </config>
   </experience>
-  <experience id="3">
-    <stimulé type="RadioButton" media="image">
-      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
-      <quesiton>qsdqsd</quesiton>
-      <reponse>non</reponse>
-      <reponse>oui</reponse>
-    </stimulé>
+  <experience id="othmanee">
     <stimulé type="RadioButton" media="image">
       <url>Exp1/Images/emoticone.jpg</url>
-      <quesiton>qsdqsd</quesiton>
-      <reponse>non</reponse>
-      <reponse>oui</reponse>
-    </stimulé>
-    <stimulé type="RadioButton" media="image">
-      <url>Exp1/Images/retour.png</url>
-      <quesiton>qsdqsd</quesiton>
-      <reponse>non</reponse>
-      <reponse>oui</reponse>
-    </stimulé>
-    <config>
-      <emplacement>
-        <EmplacementQuestion>6</EmplacementQuestion>
-        <fons>Arial</fons>
-        <couleur>0/0/0</couleur>
-        <taille>10</taille>
-      </emplacement>
-      <consigne>
-        <text />
-        <fons>Arial</fons>
-        <couleur>0/0/0</couleur>
-        <taille>10</taille>
-      </consigne>
-    </config>
-  </experience>
-  <experience id="">
-    <stimulé type="RadioButton" media="image">
-      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
-      <quesiton>dd</quesiton>
-      <reponse>sqd</reponse>
-      <reponse>sqdqs</reponse>
-    </stimulé>
-    <stimulé type="RadioButton" media="image">
-      <url>Exp1/Images/emoticone.jpg</url>
-      <quesiton>dd</quesiton>
-      <reponse>sqd</reponse>
-      <reponse>sqdqs</reponse>
-    </stimulé>
-    <stimulé type="RadioButton" media="image">
-      <url>Exp1/Images/retour.png</url>
-      <quesiton>dd</quesiton>
-      <reponse>sqd</reponse>
-      <reponse>sqdqs</reponse>
+      <quesiton>sqd</quesiton>
+      <reponse>dqs</reponse>
     </stimulé>
     <config>
       <emplacement>
