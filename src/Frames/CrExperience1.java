@@ -82,7 +82,7 @@ public class CrExperience1 extends javax.swing.JFrame {
          ident = new Attribute("id", ""+id);
         experience.setAttribute(ident);
         position =6;
-          racine.addContent(experience);
+        racine.addContent(experience);
         
     }
     public void remplirJtextArea(String ch){
@@ -131,23 +131,25 @@ public class CrExperience1 extends javax.swing.JFrame {
         jList1 = new javax.swing.JList();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jTextField5 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jRadioButton17 = new javax.swing.JRadioButton();
         jRadioButton18 = new javax.swing.JRadioButton();
         jRadioButton19 = new javax.swing.JRadioButton();
         jRadioButton20 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jpas = new javax.swing.JTextField();
+        jde = new javax.swing.JTextField();
+        ja = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
+        jPanel16 = new javax.swing.JPanel();
+        jButton15 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jRadioButton14 = new javax.swing.JRadioButton();
@@ -310,7 +312,7 @@ public class CrExperience1 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 180, Short.MAX_VALUE))
+                .addGap(0, 452, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,6 +371,11 @@ public class CrExperience1 extends javax.swing.JFrame {
         jRadioButton17.setText("numerique sans details");
 
         jRadioButton18.setText("numerique avec details");
+        jRadioButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton18ActionPerformed(evt);
+            }
+        });
 
         jRadioButton19.setText("Text avec details");
         jRadioButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -384,9 +391,9 @@ public class CrExperience1 extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("1");
-
         jLabel1.setText("pas");
+
+        jpas.setText("1");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -398,17 +405,17 @@ public class CrExperience1 extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jLabel1))
-                .addGap(31, 31, 31)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(119, 119, 119)
+                        .addComponent(jpas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97)
                         .addComponent(jButton4))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                            .addComponent(jTextField6))
-                        .addGap(36, 36, 36)
+                            .addComponent(ja, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(jde))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jRadioButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jRadioButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -416,30 +423,32 @@ public class CrExperience1 extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton19)
                             .addComponent(jRadioButton20))))
-                .addContainerGap(1251, Short.MAX_VALUE))
+                .addContainerGap(1304, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jRadioButton18)
-                    .addComponent(jRadioButton19))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jRadioButton17)
-                    .addComponent(jRadioButton20))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jRadioButton18)
+                            .addComponent(jRadioButton19)
+                            .addComponent(jde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jRadioButton17)
+                            .addComponent(jRadioButton20)))
+                    .addComponent(ja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(32, Short.MAX_VALUE))
+                            .addComponent(jpas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(30, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4)
@@ -505,6 +514,32 @@ public class CrExperience1 extends javax.swing.JFrame {
 
         jPanel5.add(jPanel9, "card2");
 
+        jButton15.setText("valider");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jButton15)
+                .addContainerGap(1553, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jButton15)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(jPanel16, "card4");
+
         jLabel2.setText("Question:");
 
         jRadioButton14.setText("Images");
@@ -553,19 +588,16 @@ public class CrExperience1 extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(577, 577, 577)
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(1186, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(263, 263, 263))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(263, 263, 263)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,16 +621,19 @@ public class CrExperience1 extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(236, 236, 236))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addGap(236, 236, 236))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(98, 98, 98))))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(248, 248, 248)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(104, 104, 104)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(51, Short.MAX_VALUE)))
+                    .addContainerGap(463, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -1095,8 +1130,8 @@ public class CrExperience1 extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1197,12 +1232,15 @@ public class CrExperience1 extends javax.swing.JFrame {
         String sortie = "";
          if(jRadioButton1.isSelected()){
                 sortie = "Exp1/Images/";
+                
                 }
         else if(jRadioButton2.isSelected()){
                 sortie ="Exp1/Videos/";
-                
+               
         }
-        else   { sortie ="Exp1/Sons/";
+        else   {
+                
+                sortie ="Exp1/Sons/";
         
         }
        for (int i =0 ; i< f.length;i++){
@@ -1210,7 +1248,8 @@ public class CrExperience1 extends javax.swing.JFrame {
             File fichier = new File(f[i]);
             File sortieFile = new File(sortie+fichier.getName());
             CopierFichier(fichier,sortieFile);
-           
+            list.removeAllElements();
+            remplirJtextArea(sortie);
             
         }
          JOptionPane.showMessageDialog(rootPane, "Copie Términée !!");
@@ -1222,16 +1261,18 @@ public class CrExperience1 extends javax.swing.JFrame {
         if("CheckBox".equals(choice1.getSelectedItem()) || "RadioButton".equals(choice1.getSelectedItem().toString())){
             jPanel9.setVisible(true);
             jPanel6.setVisible(false);
-
+             jPanel16.setVisible(false);
         }
         else if("Echelle".equals(choice1.getSelectedItem())){
             jPanel9.setVisible(false);
             jPanel6.setVisible(true);
+             jPanel16.setVisible(false);
 
         }
-        else{
+        else if("Commentaire".equals(choice1.getSelectedItem())){
             jPanel6.setVisible(false);
             jPanel9.setVisible(false);
+            jPanel16.setVisible(true);
         }
 
     }//GEN-LAST:event_choice1ItemStateChanged
@@ -1486,6 +1527,11 @@ public class CrExperience1 extends javax.swing.JFrame {
       //avec en argument le nom du fichier pour effectuer la sérialisation.
  
       sortie.output(document, new FileOutputStream("Exp1/Experiences.xml"));
+            jTextArea2.setText("");
+            ja.setText("");
+            jde.setText("");
+            this.setVisible(false);
+            new CrExperience1().setVisible(true);
    }
    catch (java.io.IOException e){}
            
@@ -1500,23 +1546,161 @@ public class CrExperience1 extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-          for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
+          
             
-        
-            tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/"+jLabel7.getText()+newline+"\n";
-            
+        if(jRadioButton18.isSelected()){
+            for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
+            tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/numerique/avec"+"/"+jde.getText()+"/"+ja.getText()+"/"+jpas.getText()+newline+"\n";
+            Element stimule = new Element("stimulé");
+            Attribute type = new Attribute("type",choice1.getSelectedItem());
+            Attribute media = new Attribute("media",choix);
+            stimule.setAttribute(type);
+            stimule.setAttribute(media);
+            experience.addContent(stimule);
+            Element url = new Element("url");
+            url.setText(jList1.getSelectedValuesList().get(i).toString());
+            stimule.addContent(url);
+            Element question = new Element("quesiton");
+            question.setText(jTextField2.getText());
+            stimule.addContent(question);
+            Element de = new Element("de");
+            de.setText(jde.getText());
+            stimule.addContent(de);
+            Element a = new Element("a");
+            a.setText(ja.getText());
+            stimule.addContent(a);
+            Element pas = new Element("pas");
+            pas.setText(jpas.getText());
+            stimule.addContent(pas);
+            Element detail= new Element("detail");
+            Attribute affichage = new Attribute("affichage","avec");
+            Attribute type3 = new Attribute("textnumerique","numerique");
+            detail.setAttribute(type3);
+            detail.setAttribute(affichage);
+            stimule.addContent(detail);
+        }
             
           }
         
+        else if(jRadioButton17.isSelected()){
+            for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
+            tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/numerique/sans"+"/"+jde.getText()+"/"+ja.getText()+"/"+jpas.getText()+newline+"\n";
+            Element stimule = new Element("stimulé");
+            Attribute type = new Attribute("type",choice1.getSelectedItem());
+            Attribute media = new Attribute("media",choix);
+            stimule.setAttribute(type);
+            stimule.setAttribute(media);
+            experience.addContent(stimule);
+            Element url = new Element("url");
+            url.setText(jList1.getSelectedValuesList().get(i).toString());
+            stimule.addContent(url);
+            Element question = new Element("quesiton");
+            question.setText(jTextField2.getText());
+            stimule.addContent(question);
+            Element de = new Element("de");
+            de.setText(jde.getText());
+            stimule.addContent(de);
+            Element a = new Element("a");
+            a.setText(ja.getText());
+            stimule.addContent(a);
+            Element pas = new Element("pas");
+            pas.setText(jpas.getText());
+            stimule.addContent(pas);
+            Element detail= new Element("detail");
+            Attribute affichage = new Attribute("affichage","sans");
+            Attribute type3 = new Attribute("textnumerique","numerique");
+            detail.setAttribute(type3);
+            detail.setAttribute(affichage);
+            stimule.addContent(detail);
+        }
+           
+          }
+       else if(jRadioButton19.isSelected()){
+            for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
+            tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/text/avec"+"/"+jde.getText()+"/"+ja.getText()+"/"+jpas.getText()+newline+"\n";
+            Element stimule = new Element("stimulé");
+            Attribute type = new Attribute("type",choice1.getSelectedItem());
+            Attribute media = new Attribute("media",choix);
+            stimule.setAttribute(type);
+            stimule.setAttribute(media);
+            experience.addContent(stimule);
+            Element url = new Element("url");
+            url.setText(jList1.getSelectedValuesList().get(i).toString());
+            stimule.addContent(url);
+            Element question = new Element("quesiton");
+            question.setText(jTextField2.getText());
+            stimule.addContent(question);
+            Element de = new Element("de");
+            de.setText(jde.getText());
+            stimule.addContent(de);
+            Element a = new Element("a");
+            a.setText(ja.getText());
+            stimule.addContent(a);
+            Element pas = new Element("pas");
+            pas.setText(jpas.getText());
+            stimule.addContent(pas);
+            Element detail= new Element("detail");
+            Attribute affichage = new Attribute("affichage","avec");
+            Attribute type3 = new Attribute("textnumerique","text");
+            detail.setAttribute(type3);
+            detail.setAttribute(affichage);
+            for(int j=0 ; j<e.getList().size();j++){
+                Element rep = new Element("rep");
+                rep.setText(e.getList().get(j).getText());
+                detail.addContent(rep);
+            }
+            stimule.addContent(detail);
+        }
         
+          }
+       else {
+            for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
+            tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/text/sans"+"/"+jde.getText()+"/"+ja.getText()+"/"+jpas.getText()+newline+"\n";
+            Element stimule = new Element("stimulé");
+            Attribute type = new Attribute("type",choice1.getSelectedItem());
+            Attribute media = new Attribute("media",choix);
+            stimule.setAttribute(type);
+            stimule.setAttribute(media);
+            experience.addContent(stimule);
+            Element url = new Element("url");
+            url.setText(jList1.getSelectedValuesList().get(i).toString());
+            stimule.addContent(url);
+            Element question = new Element("quesiton");
+            question.setText(jTextField2.getText());
+            stimule.addContent(question);
+            Element de = new Element("de");
+            de.setText(jde.getText());
+            stimule.addContent(de);
+            Element a = new Element("a");
+            a.setText(ja.getText());
+            stimule.addContent(a);
+            Element pas = new Element("pas");
+            pas.setText(jpas.getText());
+            stimule.addContent(pas);
+            Element detail= new Element("detail");
+            Attribute affichage = new Attribute("affichage","sans");
+            Attribute type3 = new Attribute("textnumerique","text");
+            detail.setAttribute(type3);
+            detail.setAttribute(affichage);
+            for(int j=0 ; j<e.getList().size();j++){
+                Element rep = new Element("rep");
+                rep.setText(e.getList().get(j).getText());
+                detail.addContent(rep);
+            }
+            stimule.addContent(detail);
+        }
+           
+          }
         
+        jTextArea2.setText(tache);
+            
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
         // TODO add your handling code here:
         
-        int nombre = Integer.parseInt(jTextField6.getText()) - Integer.parseInt(jTextField5.getText());
+        int nombre = Integer.parseInt(ja.getText()) - Integer.parseInt(jde.getText());
          e = new EchelleText(nombre);
         e.setVisible(true);
       
@@ -1524,7 +1708,34 @@ public class CrExperience1 extends javax.swing.JFrame {
 
     private void jRadioButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton20ActionPerformed
         // TODO add your handling code here:
+         e = new EchelleText(2);
+        e.setVisible(true);
     }//GEN-LAST:event_jRadioButton20ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        for(int i=0 ; i<jList1.getSelectedValuesList().size();i++ ){
+            tache= tache +jList1.getSelectedValuesList().get(i).toString()+"/"+jTextField2.getText()+"/"+choice1.getSelectedItem()+"/"+newline+"\n";
+            Element stimule = new Element("stimulé");
+            Attribute type = new Attribute("type",choice1.getSelectedItem());
+            Attribute media = new Attribute("media",choix);
+            stimule.setAttribute(type);
+            stimule.setAttribute(media);
+            experience.addContent(stimule);
+            Element url = new Element("url");
+            url.setText(jList1.getSelectedValuesList().get(i).toString());
+            stimule.addContent(url);
+            Element question = new Element("quesiton");
+            question.setText(jTextField2.getText());
+            stimule.addContent(question);
+        }
+        jTextArea2.setText(tache);
+        
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jRadioButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton18ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1572,6 +1783,7 @@ public class CrExperience1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1614,6 +1826,7 @@ public class CrExperience1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
@@ -1653,12 +1866,12 @@ public class CrExperience1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField ja;
+    private javax.swing.JTextField jde;
+    private javax.swing.JTextField jpas;
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
     private java.awt.TextField textField3;
@@ -1820,5 +2033,7 @@ out.close();
              buttonGroup5.add(jRadioButton20);
              jRadioButton14.setSelected(true);
              choix ="image";
+             jRadioButton18.setSelected(true);
+              jPanel16.setVisible(false);
    }
 }
