@@ -4,6 +4,24 @@
  */
 package Frames;
 
+import static Frames.CrExperience1.document;
+import static Frames.CrExperience1.racine;
+import babylabaididellal.LancerExp;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.jdom2.DataConversionException;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+
 /**
  *
  * @author Aidi Othmane
@@ -13,10 +31,41 @@ public class LancementExperience extends javax.swing.JFrame {
     /**
      * Creates new form LancementExperience
      */
+    public static Element racine = new Element("experiences");
+    public static  org.jdom2.Document document = new Document(racine);
+    private LancerExp lancer;
     public LancementExperience() {
         initComponents();
+        initialiser();
     }
-
+private List<String> getConfig(String chemain) throws DataConversionException{
+        List<String> ids = new ArrayList<>();
+        File f = new File(chemain+"/Experiences.xml");
+        if ( f.exists()){
+            
+            SAXBuilder sxb = new SAXBuilder();
+      try
+      {
+    
+         document = sxb.build(new File(chemain+"/Experiences.xml"));
+      }
+      catch(Exception e){}
+       racine = document.getRootElement();
+       if( ! racine.getChildren("experience").isEmpty()){
+           List<Element> childs = racine.getChildren("experience");
+           for(int i=0; i< childs.size();i++){
+               if(childs.get(i).hasAttributes())
+               ids.add(childs.get(i).getAttributeValue("id"));
+               
+               }
+         
+          
+       }
+    
+            
+        }
+      return ids;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,6 +75,7 @@ public class LancementExperience extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -53,6 +103,12 @@ public class LancementExperience extends javax.swing.JFrame {
         jLabel1.setText("Type d'Epérience:");
 
         jLabel2.setText("Experience d'ID :");
+
+        choice2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                choice2ItemStateChanged(evt);
+            }
+        });
 
         jPanel13.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), null));
         jPanel13.setForeground(new java.awt.Color(255, 51, 51));
@@ -200,6 +256,11 @@ public class LancementExperience extends javax.swing.JFrame {
         });
 
         jButton2.setText("Lancer");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -216,9 +277,9 @@ public class LancementExperience extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2))
                                 .addGap(34, 34, 34)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(choice2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(choice2, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(choice1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(247, 247, 247)
                         .addComponent(jButton1)
@@ -229,11 +290,11 @@ public class LancementExperience extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(choice2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,12 +328,14 @@ public class LancementExperience extends javax.swing.JFrame {
 
     private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
         // TODO add your handling code here:
-       
+       jPanel19.setVisible(true);
+       jPanel15.setVisible(false);
     }//GEN-LAST:event_jRadioButton12ActionPerformed
 
     private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
         // TODO add your handling code here:
-     
+     jPanel19.setVisible(false);
+       jPanel15.setVisible(true);
     }//GEN-LAST:event_jRadioButton13ActionPerformed
 
     private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
@@ -286,6 +349,142 @@ public class LancementExperience extends javax.swing.JFrame {
         b.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void choice2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_choice2ItemStateChanged
+        // TODO add your handling code here:
+        List<String> ids = new ArrayList<>();
+        if(choice2.getSelectedIndex() == 1){
+            try {
+                ids = getConfig("Exp1");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()){
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 1");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }else{
+                remplirChoice1(ids);
+            }
+        }
+        else if(choice2.getSelectedIndex() == 2){
+             try {
+                ids = getConfig("Exp2");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 2");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }
+            else{
+                remplirChoice1(ids);
+            }
+        }
+        else if(choice2.getSelectedIndex() == 3){
+             try {
+                ids = getConfig("Exp3");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()){
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 3");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }
+            else{
+                remplirChoice1(ids);
+            }
+        }
+       else if(choice2.getSelectedIndex() == 4){
+             try {
+                ids = getConfig("Exp4");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()){
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 4");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }
+            else{
+                remplirChoice1(ids);
+            }
+        }
+       else if(choice2.getSelectedIndex() == 5){
+             try {
+                ids = getConfig("Exp5");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 5");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }
+            else{
+                remplirChoice1(ids);
+            }
+        }
+       else if(choice2.getSelectedIndex() == 6){
+             try {
+                ids = getConfig("Exp6");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 6");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }
+            else{
+                remplirChoice1(ids);
+            }
+        }
+       else if(choice2.getSelectedIndex() == 7){
+             try {
+                ids = getConfig("Exp7");
+            } catch (DataConversionException ex) {
+                
+            }
+            if(ids.isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane,"Veulliez créer vos experiences de type 7");
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+            }
+            else{
+                remplirChoice1(ids);
+            }
+        }   
+       else {
+                choice1.removeAll();
+                choice1.add("Aucune experience");
+       }
+    }//GEN-LAST:event_choice2ItemStateChanged
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if(jRadioButton12.isSelected()){
+            if(choice2.getSelectedIndex() != 0 && choice1.getItemCount()!=1 && !textField1.getText().isEmpty()){
+            
+            lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"fixe",textField1.getText());
+            Experience1 exp1 = new Experience1(lancer);
+            exp1.setVisible(true);
+            this.setVisible(false);
+            }
+            else JOptionPane.showMessageDialog(rootPane, "Remplicez bien le formulaire");
+                }
+        else {
+            if(choice2.getSelectedIndex() != 0 && choice1.getItemCount()!=1 && !textField2.getText().isEmpty() && !textField3.getText().isEmpty()){
+        lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"aleatoire",textField2.getText()+"/"+textField3.getText());
+        lancer.setDuree(lancer.verifierDurer()+"");
+        Experience1 exp1 = new Experience1(lancer);
+          exp1.setVisible(true);
+            this.setVisible(false);
+            }else JOptionPane.showMessageDialog(rootPane, "Remplicez bien le formulaire");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,6 +521,7 @@ public class LancementExperience extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private java.awt.Choice choice1;
     private java.awt.Choice choice2;
     private javax.swing.JButton jButton1;
@@ -344,4 +544,33 @@ public class LancementExperience extends javax.swing.JFrame {
     private java.awt.TextField textField2;
     private java.awt.TextField textField3;
     // End of variables declaration//GEN-END:variables
+
+    private void initialiser() {
+        choice2.add("choisissez un type d'experience");
+        choice2.add("Experience 1");
+        choice2.add("Experience 2");
+        choice2.add("Experience 3");
+        choice2.add("Experience 4");
+        choice2.add("Experience 5");
+        choice2.add("Experience 6");
+        choice2.add("Experience 7");
+        choice1.add("Aucune experience");
+        choice1.select(0);
+        choice2.select(0);
+        buttonGroup1.add(jRadioButton12);
+        buttonGroup1.add(jRadioButton13);
+        jRadioButton12.setSelected(true);
+        jPanel19.setVisible(true);
+        jPanel15.setVisible(false);
+       
+        
+        }
+
+    private void remplirChoice1(List<String> ids) {
+        choice1.removeAll();
+        for(int i=0;i <ids.size();i++){
+            choice1.add(ids.get(i));
+        }
+         }
+    
 }

@@ -2018,8 +2018,8 @@ public class CrExperience1 extends javax.swing.JFrame {
         if( ! racine.getChildren("experience").isEmpty()){
            List<Element> childs = racine.getChildren("experience");
            System.out.println(childs.size());
-           for(int i=0; i< childs.size()-1;i++){
-               
+           for(int i=0; i< childs.size();i++){
+               if(childs.get(i).hasAttributes())
                if(childs.get(i).getAttribute("id").getValue().equals(x)){
                    test = 1;
                }
