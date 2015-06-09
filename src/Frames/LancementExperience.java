@@ -466,7 +466,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         if(jRadioButton12.isSelected()){
-            if(choice2.getSelectedIndex() != 0 && choice1.getItemCount()!=1 && !textField1.getText().isEmpty()){
+            if(choice2.getSelectedIndex() != 0  && !textField1.getText().isEmpty()){
             
             lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"fixe",textField1.getText());
             Experience1 exp1 = new Experience1(lancer);
@@ -571,6 +571,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         for(int i=0;i <ids.size();i++){
             choice1.add(ids.get(i));
         }
+        choice1.select(0);
          }
     
 }
