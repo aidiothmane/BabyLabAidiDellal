@@ -14,26 +14,58 @@ public class LancerExp {
     public String typeExp;
     public String id;
     public String typeDure;
-    public String duree;
+    public int dureeF;
+    public int dureeA1;
+    public int dureeA2;
+    public int duree;
 
-    public LancerExp(String typeExp, String id, String typeDure, String duree) {
+    public int getDuree() {
+        return duree;
+    }
+
+    public void setDuree(int duree) {
+        this.duree = duree;
+    }
+    public int getDureeF() {
+        return dureeF;
+    }
+
+    public void setDureeF(int dureeF) {
+        this.dureeF = dureeF;
+    }
+
+    public int getDureeA1() {
+        return dureeA1;
+    }
+
+    public void setDureeA1(int dureeA1) {
+        this.dureeA1 = dureeA1;
+    }
+
+    public int getDureeA2() {
+        return dureeA2;
+    }
+
+    public void setDureeA2(int dureeA2) {
+        this.dureeA2 = dureeA2;
+    }
+
+    public LancerExp(String typeExp, String id, String typeDure) {
         this.typeExp = typeExp;
         this.id = id;
         this.typeDure = typeDure;
-        this.duree = duree;
+      
     }
     public int  verifierDurer(){
         int valeur;
         if(typeDure.equals("aleatoire")){
            Random r = new Random();
-           String[] val = duree.split("/");
-                     
-           int valeurMin = Integer.parseInt(val[0]);
-           int valeurMax = Integer.parseInt(val[1]);
-           valeur = valeurMin + r.nextInt(valeurMax - valeurMin);
+          
+           valeur = dureeA1 + r.nextInt(dureeA2 - dureeA1);
         }else{
-            valeur = Integer.parseInt(duree);
+            valeur = dureeF;
         }
+        this.duree=valeur;
         return valeur;
     }
 
@@ -61,12 +93,6 @@ public class LancerExp {
         this.typeDure = typeDure;
     }
 
-    public String getDuree() {
-        return duree;
-    }
-
-    public void setDuree(String duree) {
-        this.duree = duree;
-    }
+    
     
 }

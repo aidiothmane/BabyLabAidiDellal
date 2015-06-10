@@ -8,7 +8,11 @@ package model;
  *
  * @author Aidi Othmane
  */
-public class QuestionCommentaire {
+public class QuestionCommentaire extends Question{
+
+    public QuestionCommentaire(String question, String url, String media) {
+        super(question, url, media);
+    }
 
    
     

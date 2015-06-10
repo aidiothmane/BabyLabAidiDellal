@@ -106,6 +106,7 @@ void test(){
         // TODO add your handling code here:
         CreationExperience cr = new CreationExperience();
                 cr.setVisible(true);
+                cr.setLocationRelativeTo(null);
                 this.setVisible(false);
        
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -114,6 +115,7 @@ void test(){
         // TODO add your handling code here:
         LancementExperience l = new LancementExperience();
         l.setVisible(true);
+        l.setLocationRelativeTo(null);
         this.setVisible(false);
 
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -148,7 +150,9 @@ void test(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BabyLab().setVisible(true);
+               BabyLab b=  new BabyLab();
+               b.setVisible(true);
+               b.setLocationRelativeTo(null);
             }
         });
     }

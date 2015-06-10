@@ -23,7 +23,43 @@ public class Config {
     public boolean ecran;
     public String couleur3;
     public String typeDure;
-    public String duree;
+     public int dureeF;
+    public int dureeA1;
+    public int dureeA2;
+    public int duree;
+
+    public int getDureeF() {
+        return dureeF;
+    }
+
+    public void setDureeF(int dureeF) {
+        this.dureeF = dureeF;
+    }
+
+    public int getDureeA1() {
+        return dureeA1;
+    }
+
+    public void setDureeA1(int dureeA1) {
+        this.dureeA1 = dureeA1;
+    }
+
+    public int getDureeA2() {
+        return dureeA2;
+    }
+
+    public void setDureeA2(int dureeA2) {
+        this.dureeA2 = dureeA2;
+    }
+
+    public int getDuree() {
+        return duree;
+    }
+
+    public void setDuree(int duree) {
+        this.duree = duree;
+    }
+
 
     public Config() {
     }
@@ -32,36 +68,24 @@ public class Config {
     public String toString() {
         return "Config{" + "emplacement=" + emplacement + ", font=" + font + ", couleur=" + couleur + ", taille=" + taille + ", consigne=" + consigne + ", font2=" + font2 + ", couleur2=" + couleur2 + ", taille3=" + taille3 + ", ecran=" + ecran + ", couleur3=" + couleur3 + ", typeDure=" + typeDure + ", duree=" + duree + '}';
     }
-
-    public Config(int emplacement, String font, String couleur, int taille, String consigne, String font2, String couleur2, int taille3, boolean ecran, String couleur3, String typeDure, String duree) {
-        this.emplacement = emplacement;
-        this.font = font;
-        this.couleur = couleur;
-        this.taille = taille;
-        this.consigne = consigne;
-        this.font2 = font2;
-        this.couleur2 = couleur2;
-        this.taille3 = taille3;
-        if(ecran){
-        this.ecran = ecran;
-        this.couleur3 = couleur3;
-        this.typeDure = typeDure;
+ public int  verifierDurer(){
+        int valeur = 0;
+        if(isEcran()){
         if(typeDure.equals("aleatoire")){
-            this.duree = duree;
            Random r = new Random();
-           String[] val = duree.split("/");
-                     
-           int valeurMin = Integer.parseInt(val[0]);
-           int valeurMax = Integer.parseInt(val[1]);
-           this.duree = valeurMin + r.nextInt(valeurMax - valeurMin)+"";
+          
+           valeur = dureeA1 + r.nextInt(dureeA2 - dureeA1);
         }else{
-              this.duree = duree;
+            valeur = dureeF;
         }
-      
-        
+        this.duree=valeur;
+        }else{
+            valeur = 0;
         }
+        System.out.println(valeur +"");
+        return valeur;
     }
-
+    
     public int getEmplacement() {
         return emplacement;
     }
@@ -150,12 +174,6 @@ public class Config {
         this.typeDure = typeDure;
     }
 
-    public String getDuree() {
-        return duree;
-    }
-
-    public void setDuree(String duree) {
-        this.duree = duree;
-    }
+    
 
 }

@@ -7,6 +7,7 @@ package Frames;
 import static Frames.CrExperience1.document;
 import static Frames.CrExperience1.racine;
 import babylabaididellal.LancerExp;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
 import org.jdom2.DataConversionException;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -95,6 +97,8 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         jPanel19 = new javax.swing.JPanel();
         textField1 = new java.awt.TextField();
         jLabel18 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -131,9 +135,21 @@ private List<String> getConfig(String chemain) throws DataConversionException{
             }
         });
 
+        textField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField3KeyTyped(evt);
+            }
+        });
+
         jLabel12.setText("ms");
 
         jLabel13.setText("à");
+
+        textField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField2KeyTyped(evt);
+            }
+        });
 
         jLabel17.setText("de");
 
@@ -144,12 +160,12 @@ private List<String> getConfig(String chemain) throws DataConversionException{
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
-                .addGap(5, 5, 5)
-                .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textField3, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addContainerGap())
@@ -169,6 +185,11 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         textField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textField1ActionPerformed(evt);
+            }
+        });
+        textField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textField1KeyTyped(evt);
             }
         });
 
@@ -194,6 +215,10 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jToggleButton1.setText("ON");
+
+        jLabel3.setText("Chrono");
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -208,8 +233,12 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(jRadioButton12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(34, 34, 34)
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +251,11 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton13)
                     .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jLabel3))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -285,7 +318,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                         .addComponent(jButton1)
                         .addGap(52, 52, 52)
                         .addComponent(jButton2)))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(285, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +353,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 78, Short.MAX_VALUE))
+                .addGap(0, 75, Short.MAX_VALUE))
         );
 
         pack();
@@ -468,23 +501,49 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         if(jRadioButton12.isSelected()){
             if(choice2.getSelectedIndex() != 0  && !textField1.getText().isEmpty()){
             
-            lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"fixe",textField1.getText());
-            Experience1 exp1 = new Experience1(lancer);
+            lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"fixe");
+            lancer.setDureeF(Integer.parseInt(textField1.getText()));
+            Consignes exp1 = new Consignes(lancer);
             exp1.setVisible(true);
             this.setVisible(false);
             }
             else JOptionPane.showMessageDialog(rootPane, "Remplicez bien le formulaire");
                 }
         else {
-            if(choice2.getSelectedIndex() != 0 && choice1.getItemCount()!=1 && !textField2.getText().isEmpty() && !textField3.getText().isEmpty()){
-        lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"aleatoire",textField2.getText()+"/"+textField3.getText());
-        lancer.setDuree(lancer.verifierDurer()+"");
-        Experience1 exp1 = new Experience1(lancer);
+            if(choice2.getSelectedIndex() != 0  && !textField2.getText().isEmpty() && !textField3.getText().isEmpty()){
+        lancer = new LancerExp(choice2.getSelectedItem(),choice1.getSelectedItem(),"aleatoire");
+        lancer.setDureeA1(Integer.parseInt(textField2.getText()));
+        lancer.setDureeA2(Integer.parseInt(textField3.getText()));
+        Consignes exp1 = new Consignes(lancer);
           exp1.setVisible(true);
             this.setVisible(false);
             }else JOptionPane.showMessageDialog(rootPane, "Remplicez bien le formulaire");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void textField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyTyped
+        // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(!(Character.isDigit(c)) || c==KeyEvent.VK_BACK_SPACE || c==KeyEvent.VK_DELETE){
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField1KeyTyped
+
+    private void textField2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField2KeyTyped
+        // TODO add your handling code here:
+         char c =evt.getKeyChar();
+        if(!(Character.isDigit(c)) || c==KeyEvent.VK_BACK_SPACE || c==KeyEvent.VK_DELETE){
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField2KeyTyped
+
+    private void textField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField3KeyTyped
+        // TODO add your handling code here:
+         char c =evt.getKeyChar();
+        if(!(Character.isDigit(c)) || c==KeyEvent.VK_BACK_SPACE || c==KeyEvent.VK_DELETE){
+            evt.consume();
+        }
+    }//GEN-LAST:event_textField3KeyTyped
 
     /**
      * @param args the command line arguments
@@ -533,6 +592,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -540,6 +600,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
     private javax.swing.JPanel jPanel19;
     private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JToggleButton jToggleButton1;
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
     private java.awt.TextField textField3;
@@ -547,13 +608,13 @@ private List<String> getConfig(String chemain) throws DataConversionException{
 
     private void initialiser() {
         choice2.add("choisissez un type d'experience");
-        choice2.add("Experience 1");
-        choice2.add("Experience 2");
-        choice2.add("Experience 3");
-        choice2.add("Experience 4");
-        choice2.add("Experience 5");
-        choice2.add("Experience 6");
-        choice2.add("Experience 7");
+        choice2.add("Exp1");
+        choice2.add("Exp2");
+        choice2.add("Exp3");
+        choice2.add("Exp4");
+        choice2.add("Exp5");
+        choice2.add("Exp6");
+        choice2.add("Exp7");
         choice1.add("Aucune experience");
         choice1.select(0);
         choice2.select(0);
@@ -562,7 +623,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         jRadioButton12.setSelected(true);
         jPanel19.setVisible(true);
         jPanel15.setVisible(false);
-       
+    
         
         }
 

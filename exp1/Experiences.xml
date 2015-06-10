@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <experiences>
   <experience id="aidi">
     <stimulé type="RadioButton" media="image">
@@ -6,11 +6,11 @@
       <quesiton>what ?</quesiton>
       <reponse>non</reponse>
       <reponse>oui</reponse>
-<reponse>nonnnnnnnn</reponse>
+      <reponse>nonnnnnnnn</reponse>
       <reponse>ouidddddd</reponse>
-<reponse>noqsdsqdqsn</reponse>
+      <reponse>noqsdsqdqsn</reponse>
       <reponse>chaaguiii laguiii</reponse>
-<reponse>non</reponse>
+      <reponse>non</reponse>
       <reponse>oui</reponse>
     </stimulé>
     <stimulé type="RadioButton" media="image">
@@ -31,6 +31,481 @@
         <fons>Arial</fons>
         <couleur>15/200/50</couleur>
         <taille>21</taille>
+      </emplacement>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="othmane">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>vrai ou faux ?</quesiton>
+      <reponse>faux</reponse>
+      <reponse>vrai</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>what ??????????????</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>une question ..................</quesiton>
+      <reponse>3</reponse>
+      <reponse>2</reponse>
+      <reponse>1</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial Italique</fons>
+        <couleur>0/0/255</couleur>
+        <taille>21</taille>
+      </emplacement>
+      <ecran type="fixe">
+        <couleur>0/0/0</couleur>
+        <fixe>3000</fixe>
+      </ecran>
+      <consigne>
+        <text>Consignes:
+.....................................
+..................................
+123456
+azertyuii
+é"&amp;é"é"'(-è-(è</text>
+        <fons>Arial Gras</fons>
+        <couleur>255/0/0</couleur>
+        <taille>14</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="xers">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>c'est quoi ? ?? ?? ?</quesiton>
+      <reponse>c</reponse>
+      <reponse>b</reponse>
+      <reponse>a</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>c'est quoi ? ?? ?? ?</quesiton>
+      <reponse>c</reponse>
+      <reponse>b</reponse>
+      <reponse>a</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>c'est quoi ? ?? ?? ?</quesiton>
+      <reponse>c</reponse>
+      <reponse>b</reponse>
+      <reponse>a</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <ecran type="fixe">
+        <couleur>0/0/0</couleur>
+        <fixe />
+      </ecran>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="aze">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>what is this ?</quesiton>
+      <reponse>annimal</reponse>
+      <reponse>femme</reponse>
+      <reponse>homme</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>what is this ?</quesiton>
+      <reponse>annimal</reponse>
+      <reponse>femme</reponse>
+      <reponse>homme</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>what is this ?</quesiton>
+      <reponse>annimal</reponse>
+      <reponse>femme</reponse>
+      <reponse>homme</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <ecran type="aleatoire">
+        <couleur>0/0/0</couleur>
+        <aleatoire>
+          <de>2000</de>
+          <a>4000</a>
+        </aleatoire>
+      </ecran>
+      <consigne>
+        <text>Rien Rien</text>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="ww">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>aze</quesiton>
+      <reponse>qsd</reponse>
+      <reponse>qs</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>aze</quesiton>
+      <reponse>qsd</reponse>
+      <reponse>qs</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>aze</quesiton>
+      <reponse>qsd</reponse>
+      <reponse>qs</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="exp1">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>c'est bon ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>c'est bon ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>c'est bon ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="video">
+      <url>Exp1/Videos/doc.mp4</url>
+      <quesiton>d'accord ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="son">
+      <url>Exp1/Sons/misc.mp3</url>
+      <quesiton>année de sortie ?</quesiton>
+      <reponse>1992</reponse>
+      <reponse>1992</reponse>
+      <reponse>1995</reponse>
+      <reponse>1990</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>255/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <ecran type="fixe">
+        <couleur>0/0/0</couleur>
+        <fixe>3000</fixe>
+      </ecran>
+      <consigne>
+        <text>BLA BLA BLA sqddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+54444444444444444444444444444444444444444qsd
+sqd
+qsd
+qs
+d
+qs
+dsq
+ddddddddddddddddddd
+sqdqs</text>
+        <fons>Arial</fons>
+        <couleur>0/0/255</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="aaaaa">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>lool ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>lool ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>lool ?</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="la">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>aazaeaze</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>aazaeaze</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>aazaeaze</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <ecran type="fixe">
+        <couleur>0/0/0</couleur>
+        <fixe>3000</fixe>
+      </ecran>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="ppppp">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>dq</quesiton>
+      <reponse>ss</reponse>
+      <reponse>qq</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="video">
+      <url>Exp1/Videos/doc.mp4</url>
+      <quesiton>dq</quesiton>
+      <reponse>ds</reponse>
+      <reponse>d</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="son">
+      <url>Exp1/Sons/misc.mp3</url>
+      <quesiton>dq</quesiton>
+      <reponse>sd</reponse>
+      <reponse>ds</reponse>
+      <reponse>ssd</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="eeeeeeeee">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>whaat ?</quesiton>
+      <reponse>zzzzz</reponse>
+      <reponse>aaaaa</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="video">
+      <url>Exp1/Videos/doc.mp4</url>
+      <quesiton>whaat ?</quesiton>
+      <reponse>eee</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="son">
+      <url>Exp1/Sons/misc.mp3</url>
+      <quesiton>whaat ?</quesiton>
+      <reponse>eeee</reponse>
+      <reponse>eee</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>whaat ?</quesiton>
+      <reponse>ee</reponse>
+      <reponse>eee</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="test">
+    <stimulé type="CheckBox" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>wxcxwc</quesiton>
+      <reponse>3</reponse>
+      <reponse>2</reponse>
+      <reponse>1</reponse>
+    </stimulé>
+    <stimulé type="Commentaire" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>wxcxwc</quesiton>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </emplacement>
+      <consigne>
+        <text />
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="exemple">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>un question</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>un question</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/retour.png</url>
+      <quesiton>un question</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>18</taille>
+      </emplacement>
+      <ecran type="fixe">
+        <couleur>0/0/0</couleur>
+        <fixe>6000</fixe>
+      </ecran>
+      <consigne>
+        <text>quelque ....</text>
+        <fons>Arial Gras</fons>
+        <couleur>255/0/0</couleur>
+        <taille>21</taille>
+      </consigne>
+    </config>
+  </experience>
+  <experience id="exemple2">
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/11218510_843876532362925_7204800742237024529_n.jpg</url>
+      <quesiton>qsd</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="video">
+      <url>Exp1/Videos/doc.mp4</url>
+      <quesiton>qsd</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="son">
+      <url>Exp1/Sons/misc.mp3</url>
+      <quesiton>qsd</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <stimulé type="RadioButton" media="image">
+      <url>Exp1/Images/emoticone.jpg</url>
+      <quesiton>qsd</quesiton>
+      <reponse>non</reponse>
+      <reponse>oui</reponse>
+    </stimulé>
+    <config>
+      <emplacement>
+        <EmplacementQuestion>6</EmplacementQuestion>
+        <fons>Arial</fons>
+        <couleur>0/0/0</couleur>
+        <taille>10</taille>
       </emplacement>
       <consigne>
         <text />
