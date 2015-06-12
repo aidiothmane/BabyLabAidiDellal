@@ -97,12 +97,11 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         jPanel19 = new javax.swing.JPanel();
         textField1 = new java.awt.TextField();
         jLabel18 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Type d'Epérience:");
 
@@ -215,10 +214,6 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jToggleButton1.setText("ON");
-
-        jLabel3.setText("Chrono");
-
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -233,11 +228,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(jRadioButton12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(34, 34, 34)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
@@ -251,11 +242,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton13)
                     .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jLabel3))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -314,11 +301,11 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                                     .addComponent(choice2, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                                     .addComponent(choice1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(jButton1)
-                        .addGap(52, 52, 52)
-                        .addComponent(jButton2)))
-                .addContainerGap(285, Short.MAX_VALUE))
+                        .addGap(175, 175, 175)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,11 +320,11 @@ private List<String> getConfig(String chemain) throws DataConversionException{
                     .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(45, 45, 45)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addGap(75, 75, 75))
+                .addGap(92, 92, 92))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,7 +340,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 75, Short.MAX_VALUE))
+                .addGap(0, 79, Short.MAX_VALUE))
         );
 
         pack();
@@ -380,6 +367,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         // TODO add your handling code here:
         BabyLab b  = new BabyLab();
         b.setVisible(true);
+        b.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -505,6 +493,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
             lancer.setDureeF(Integer.parseInt(textField1.getText()));
             Consignes exp1 = new Consignes(lancer);
             exp1.setVisible(true);
+            exp1.setLocationRelativeTo(null);
             this.setVisible(false);
             }
             else JOptionPane.showMessageDialog(rootPane, "Remplicez bien le formulaire");
@@ -516,6 +505,7 @@ private List<String> getConfig(String chemain) throws DataConversionException{
         lancer.setDureeA2(Integer.parseInt(textField3.getText()));
         Consignes exp1 = new Consignes(lancer);
           exp1.setVisible(true);
+          exp1.setLocationRelativeTo(null);
             this.setVisible(false);
             }else JOptionPane.showMessageDialog(rootPane, "Remplicez bien le formulaire");
         }
@@ -592,7 +582,6 @@ private List<String> getConfig(String chemain) throws DataConversionException{
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -600,7 +589,6 @@ private List<String> getConfig(String chemain) throws DataConversionException{
     private javax.swing.JPanel jPanel19;
     private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JToggleButton jToggleButton1;
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
     private java.awt.TextField textField3;

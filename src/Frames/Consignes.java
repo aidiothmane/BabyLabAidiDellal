@@ -140,6 +140,7 @@ private Element getConf(String chemain,String id) throws DataConversionException
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -208,6 +209,7 @@ private Element getConf(String chemain,String id) throws DataConversionException
         // TODO add your handling code here:
         Experience1 exp = new Experience1(lancer,cfg);
         exp.setVisible(true);
+        exp.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

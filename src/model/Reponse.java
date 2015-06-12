@@ -17,6 +17,7 @@ public class Reponse {
     /**
      *
      */
+    
     private List<Integer> nbrClick;
     private List<Question> questions;
     private List<String> respones;

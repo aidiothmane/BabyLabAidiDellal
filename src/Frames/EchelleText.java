@@ -34,7 +34,7 @@ public class EchelleText extends javax.swing.JFrame {
     public EchelleText(int nbre) {
         initComponents();
         this.nombre=nbre;
-        
+        this.setResizable(false);
         list1 = new ArrayList<>();
          b1 = new JButton();
         for (int i=0; i<nbre ; i++){
@@ -61,13 +61,20 @@ public class EchelleText extends javax.swing.JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-              for(int i=0 ;i<list1.size();i++){
-                  liste = list1.get(i).getText()+"/"+liste;
-                  
-              }
-             
+                int erreur = 0;
+                for (JTextField list11 : list1) {
+                    if (!list11.getText().isEmpty()) {
+                        liste = list11.getText() + "/" + liste;
+                    } else {
+                        erreur =1;
+                    }
+                }
+             if (erreur == 0)
              exit();
-         
+             else {
+                 JOptionPane.showMessageDialog(rootPane, "Remplissez bien le formulaire SVP!");
+                 liste = "";
+             }
             }
         });
     }
