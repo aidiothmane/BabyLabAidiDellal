@@ -91,6 +91,7 @@ public class Experience1 extends javax.swing.JFrame {
     
         
         initComponents();
+     
         jPanel1.setVisible(true);
         jPanel8.setVisible(false);
         jPanel7.setVisible(false);
@@ -98,6 +99,8 @@ public class Experience1 extends javax.swing.JFrame {
         jPanel2.setVisible(true);
         reponseT=new Reponse();
         this.lancer=l;
+        reponseT.setTypeExp(l.getTypeExp());
+        reponseT.setIdExp(l.getId());
         try {
             experiences=getExperiences(l.getTypeExp(),l.getId());
             
@@ -493,7 +496,7 @@ public class Experience1 extends javax.swing.JFrame {
                     @Override
                     public void mouseClicked(MouseEvent e) {
                       
-                        nbrClick++;
+                    
                          }
 
                     @Override
@@ -632,6 +635,7 @@ public class Experience1 extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -740,6 +744,13 @@ public class Experience1 extends javax.swing.JFrame {
 
         jPanel9.add(jPanel10, "card3");
 
+        jButton2.setText("Relancer");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -751,6 +762,8 @@ public class Experience1 extends javax.swing.JFrame {
                         .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -785,7 +798,9 @@ public class Experience1 extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -842,6 +857,22 @@ public class Experience1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        timer.stop();
+        timerEcran.stop();
+        if( this.reponses.get(next).getMedia().equals("son")){
+          
+         mediaPlayer.stop();
+     }if( this.reponses.get(next).getMedia().equals("video")){
+         mediaPlayer.stop();
+     }
+       Experience1 e=new Experience1(lancer, cfg);
+               e.setVisible(true);
+               e.setLocationRelativeTo(null);
+       this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -882,6 +913,7 @@ public class Experience1 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private java.awt.Canvas canvas1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

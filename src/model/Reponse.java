@@ -17,7 +17,24 @@ public class Reponse {
     /**
      *
      */
-    
+    private String typeExp;
+
+    public String getTypeExp() {
+        return typeExp;
+    }
+
+    public void setTypeExp(String typeExp) {
+        this.typeExp = typeExp;
+    }
+
+    public String getIdExp() {
+        return idExp;
+    }
+
+    public void setIdExp(String idExp) {
+        this.idExp = idExp;
+    }
+    private String idExp;
     private List<Integer> nbrClick;
     private List<Question> questions;
     private List<String> respones;

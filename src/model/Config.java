@@ -23,11 +23,11 @@ public class Config {
     public boolean ecran;
     public String couleur3;
     public String typeDure;
-     public int dureeF;
+    public int dureeF;
     public int dureeA1;
     public int dureeA2;
     public int duree;
-
+    
     public int getDureeF() {
         return dureeF;
     }

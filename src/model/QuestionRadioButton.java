@@ -22,12 +22,5 @@ public List<String> reponse;
     public List<String> getReponse() {
         return reponse;
     }
-
-  
-    
-
    
-
-    
-    
 }

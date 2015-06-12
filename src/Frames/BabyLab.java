@@ -63,6 +63,7 @@ void test(){
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BabyLab");
         setResizable(false);
 
         jButton1.setText("Créer une experience");
