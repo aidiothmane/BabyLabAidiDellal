@@ -11,6 +11,12 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.QuestionCheckBox;
+import model.QuestionCommentaire;
+import model.QuestionEchelle;
+import model.QuestionImage;
+import model.QuestionRadioButton;
 import model.Reponse;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
@@ -216,6 +222,7 @@ cellStyle.setTopBorderColor(HSSFColor.RED.index);
     row2.createCell(2, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Réponse"));
     row2.createCell(3, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Temps de réponse"));
     row2.createCell(4, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Nombre de Clicks"));
+    row2.createCell(5, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Type de réponse"));
     int j=4;
     for(int i=0;i<reponse.getQuestions().size();i++){
         HSSFRow row3 = sheet.createRow(j);
@@ -224,7 +231,26 @@ cellStyle.setTopBorderColor(HSSFColor.RED.index);
         row3.createCell(2, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString(reponse.getRespones().get(i)));
         row3.createCell(3, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString(reponse.getTmpsRepones().get(i)+" ms"));
         row3.createCell(4, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString(reponse.getNbrClick().get(i)+""));
-        j++;
+       if(reponse.getQuestions().get(i)instanceof QuestionEchelle) {
+        String de,a;
+                   QuestionEchelle q = (QuestionEchelle) reponse.getQuestions().get(i);
+                   de=q.getDe()+"";
+                   a=q.getA()+"";
+               
+        row3.createCell(5, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Echelle avec taille :"));
+         row3.createCell(6, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString(de));
+          row3.createCell(7, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString(a));
+        
+    }else if(reponse.getQuestions().get(i)instanceof QuestionCheckBox){
+        row3.createCell(5, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("CheckBox"));
+    }else if(reponse.getQuestions().get(i)instanceof QuestionCommentaire){
+        row3.createCell(5, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Commentaire"));
+    }else if(reponse.getQuestions().get(i)instanceof QuestionImage){
+        row3.createCell(5, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("Image"));
+    }else if(reponse.getQuestions().get(i)instanceof QuestionRadioButton){
+        row3.createCell(5, HSSFCell.CELL_TYPE_STRING).setCellValue(new HSSFRichTextString("RadionButton"));
+    }
+       j++;
     }
     HSSFRow row4 = sheet.createRow(j);
     HSSFCell c =row4.createCell(2, HSSFCell.CELL_TYPE_STRING);
@@ -235,7 +261,7 @@ cellStyle.setTopBorderColor(HSSFColor.RED.index);
     try {
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd HH mm ss");
         String texte_date = sdf.format(new Date());
-      fileOut = new FileOutputStream(reponse.getIdExp()+" "+texte_date+".xls");
+      fileOut = new FileOutputStream("Resultat-"+reponse.getTypeExp()+"-"+reponse.getIdExp()+" "+texte_date+".xls");
       wb.write(fileOut);
       fileOut.close();  
     } catch (FileNotFoundException e) {
@@ -244,7 +270,7 @@ cellStyle.setTopBorderColor(HSSFColor.RED.index);
       e.printStackTrace();
     }
   
-
+        JOptionPane.showMessageDialog(rootPane, "Fichier Excel Créé");
 
         
     }//GEN-LAST:event_jButton3ActionPerformed

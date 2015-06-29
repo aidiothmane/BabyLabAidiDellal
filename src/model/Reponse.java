@@ -101,10 +101,21 @@ public class Reponse {
     public String toString(){
        String res="Resultat:\n\n";
         for(int i=0 ;i<this.questions.size();i++){
-            res=res+"\nQuestion: "+this.questions.get(i).getQuestion()+"\n image: "+this.questions.get(i).getUrl()+"\n reponse: "+this.respones.get(i)+"\n temps de reponse: "+this.tmpsRepones.get(i)+"ms\n nombre de Clicks: "+this.nbrClick.get(i)+
+               if(questions.get(i) instanceof QuestionEchelle) {
+                   String de,a;
+                   QuestionEchelle q = (QuestionEchelle) questions.get(i);
+                   de=q.getDe()+"";
+                   a=q.getA()+"";
+                  
+                   res=res+"\nQuestion: "+this.questions.get(i).getQuestion()+"\n image: "+this.questions.get(i).getUrl()+"\n reponse: "+this.respones.get(i)+"echelle de: "+de+" à: "+ a+"\n temps de reponse: "+this.tmpsRepones.get(i)+"ms\n nombre de Clicks: "+this.nbrClick.get(i)+
+                    "\n\n_________________________________________________________\n";
+                   
+               }      
+               else{ res=res+"\nQuestion: "+this.questions.get(i).getQuestion()+"\n image: "+this.questions.get(i).getUrl()+"\n reponse: "+this.respones.get(i)+"\n temps de reponse: "+this.tmpsRepones.get(i)+"ms\n nombre de Clicks: "+this.nbrClick.get(i)+
                     "\n\n_________________________________________________________\n";
         }
-        res = res +" ==> Temps Total :"+ sommeTmpsRep()+"ms";
+                     res = res +" ==> Temps Total :"+ sommeTmpsRep()+"ms";
+        }
         return res;
     }
     

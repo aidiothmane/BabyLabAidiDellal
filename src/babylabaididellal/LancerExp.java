@@ -4,6 +4,7 @@
  */
 package babylabaididellal;
 
+import java.awt.Color;
 import java.util.Random;
 
 /**
@@ -18,7 +19,15 @@ public class LancerExp {
     public int dureeA1;
     public int dureeA2;
     public int duree;
+    public Color color;
 
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
     public int getDuree() {
         return duree;
     }
@@ -50,11 +59,11 @@ public class LancerExp {
         this.dureeA2 = dureeA2;
     }
 
-    public LancerExp(String typeExp, String id, String typeDure) {
+    public LancerExp(String typeExp, String id, String typeDure, Color r) {
         this.typeExp = typeExp;
         this.id = id;
         this.typeDure = typeDure;
-      
+       this.color=r;
     }
     public int  verifierDurer(){
         int valeur;

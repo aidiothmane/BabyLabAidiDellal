@@ -100,8 +100,6 @@ public List<JTextField> getList(){
 
         jPanel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

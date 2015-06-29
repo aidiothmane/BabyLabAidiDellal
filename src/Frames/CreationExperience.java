@@ -64,6 +64,11 @@ public class CreationExperience extends javax.swing.JFrame {
         });
 
         jButton3.setText("Experience 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Experience 4");
 
@@ -161,8 +166,20 @@ public class CreationExperience extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        CrExperience2 ex = new CrExperience2();
+        ex.setVisible(true);
+        ex.setLocationRelativeTo(null);
+        this.setVisible(false);
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+          CrExperience3 ex = new CrExperience3();
+        ex.setVisible(true);
+        ex.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
  
    
     /**

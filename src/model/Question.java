@@ -11,6 +11,15 @@ package model;
 public abstract class Question {
     public String question;
     public String url;
+    public String url2;
+
+    public String getUrl2() {
+        return url2;
+    }
+
+    public void setUrl2(String url2) {
+        this.url2 = url2;
+    }
 
     public String getUrl() {
         return url;

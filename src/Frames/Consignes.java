@@ -4,14 +4,15 @@
  */
 package Frames;
 
-import static Frames.Experience1.document;
-import static Frames.Experience1.racine;
+
 import babylabaididellal.LancerExp;
+import java.awt.Color;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Config;
 import org.jdom2.DataConversionException;
+import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 
@@ -24,7 +25,9 @@ public class Consignes extends javax.swing.JFrame {
     /**
      * Creates new form Consignes
      */
-    
+           public  Element racine = new Element("experiences");
+        public  String newline = System.getProperty("line.separator");
+        public   org.jdom2.Document document = new Document(racine);
      Element config;
     Config cfg=new Config();
     public LancerExp lancer;
@@ -32,6 +35,8 @@ public class Consignes extends javax.swing.JFrame {
         initComponents();
         jTextArea1.setEditable(false);
         this.lancer = l;
+        this.getContentPane().setBackground(l.getColor());
+        jPanel1.setBackground(l.getColor());
          try {
              config = getConf(l.getTypeExp(), l.getId());
          } catch (DataConversionException ex) {
@@ -40,6 +45,8 @@ public class Consignes extends javax.swing.JFrame {
         initialiserCfg();
         
         jTextArea1.setText(cfg.getConsigne());
+        String[] cl = cfg.getCouleur2().split("/");
+           jTextArea1.setForeground(new Color(Integer.parseInt(cl[0]), Integer.parseInt(cl[1]), Integer.parseInt(cl[2])));
     }
 public void initialiserCfg(){
     if(config!=null){
@@ -143,8 +150,6 @@ private Element getConf(String chemain,String id) throws DataConversionException
         setTitle("BabyLab");
         setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -191,14 +196,14 @@ private Element getConf(String chemain,String id) throws DataConversionException
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -208,10 +213,22 @@ private Element getConf(String chemain,String id) throws DataConversionException
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(lancer.getTypeExp().equals("Exp1")){
         Experience1 exp = new Experience1(lancer,cfg);
+        exp.setVisible(true);
+      //  exp.setLocationRelativeTo(null);
+        this.setVisible(false);
+        }else if(lancer.getTypeExp().equals("Exp2")){
+             Experience2 exp = new Experience2(lancer,cfg);
         exp.setVisible(true);
         exp.setLocationRelativeTo(null);
         this.setVisible(false);
+        }else if(lancer.getTypeExp().equals("Exp3")){
+             Experience3 exp = new Experience3(lancer,cfg);
+        exp.setVisible(true);
+        exp.setLocationRelativeTo(null);
+        this.setVisible(false);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -4,8 +4,6 @@
  */
 package Frames;
 
-import static Frames.LancementExperience.document;
-import static Frames.LancementExperience.racine;
 import babylabaididellal.LancerExp;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
@@ -15,8 +13,11 @@ import static java.awt.Component.CENTER_ALIGNMENT;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -42,6 +43,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.plaf.basic.BasicSliderUI;
 import model.Config;
 import model.Question;
 import model.QuestionCheckBox;
@@ -68,15 +70,17 @@ public class Experience1 extends javax.swing.JFrame {
     /**
      * Creates new form Experience1
      */
-     JTextField t ;
+           public  Element racine = new Element("experiences");
+        public  String newline = System.getProperty("line.separator");
+        public   org.jdom2.Document document = new Document(racine);
+     
     List<JCheckBox> listCh = new ArrayList<>();
     MediaPlayerFactory mediaPlayerFactory;
                  EmbeddedMediaPlayer mediaPlayer; 
    public Timer timer;
    public Timer timerEcran;
     public LancerExp lancer;
-    public static Element racine = new Element("experiences");
-    public static  org.jdom2.Document document = new Document(racine);
+    
     List<Element> experiences;
     
     Config cfg=new Config();
@@ -87,11 +91,17 @@ public class Experience1 extends javax.swing.JFrame {
     private String rer="Rien";
     public Reponse reponseT;
     public Long chrono;
+    private int nbrClickmr;
      public Experience1(LancerExp l, Config f) {
     
         
         initComponents();
-     
+        jLabel8.setVisible(false);
+   this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH); 
+  
+ this.setDefaultLookAndFeelDecorated(true);
+ this.setExtendedState(this.MAXIMIZED_BOTH);
+     jLabel5.setVisible(false);
         jPanel1.setVisible(true);
         jPanel8.setVisible(false);
         jPanel7.setVisible(false);
@@ -99,6 +109,8 @@ public class Experience1 extends javax.swing.JFrame {
         jPanel2.setVisible(true);
         reponseT=new Reponse();
         this.lancer=l;
+         
+         initialiserColeur();
         reponseT.setTypeExp(l.getTypeExp());
         reponseT.setIdExp(l.getId());
         try {
@@ -117,7 +129,7 @@ public class Experience1 extends javax.swing.JFrame {
            public void actionPerformed(ActionEvent e) {
            reponseT.addTmpReponse((Long.parseLong(""+lancer.getDuree())));
            reponseT.addReponse(rer); 
-           reponseT.addNbrClick(nbrClick);
+           reponseT.addNbrClick(nbrClick+nbrClickmr);
          if(next + 1< reponses.size()){
               AffichageEcr();
            }else{
@@ -161,7 +173,6 @@ public class Experience1 extends javax.swing.JFrame {
     }
      public void exit(){
          timer.stop();
-         
          this.setVisible(false);
      }
      public void initialiserExperience(){
@@ -277,27 +288,16 @@ public class Experience1 extends javax.swing.JFrame {
     public void AffichageEcr(){
        if(cfg.ecran){
         
-       JLabel p = new JLabel();
-             
-       
-       
-       
-       
-   jPanel4.setLayout(new BorderLayout());
-    
-    ImageIcon ii = new ImageIcon("x.png");
-           Image img = ii.getImage(); 
-           Image newimg = img.getScaledInstance(jPanel4.getWidth(),jPanel4.getHeight(), java.awt.Image.SCALE_DEFAULT);
-           ImageIcon a = new ImageIcon(newimg); 
-           p.setIcon(a);
-   
-   
-    jPanel4.add(p);
-   
-    
-    
-      jPanel4.add(p);
-       jPanel2.setVisible(false);        
+           JLabel p = new JLabel();
+           jPanel4.setLayout(new BorderLayout());
+           p.setSize(jPanel4.getWidth(),jPanel4.getHeight());
+           p.setText("X");
+           p.setHorizontalAlignment(SwingConstants.CENTER);
+           p.setFont(new Font("Arial",Font.PLAIN, 120));
+           String[] cl = cfg.getCouleur3().split("/");
+           p.setForeground(new Color(Integer.parseInt(cl[0]), Integer.parseInt(cl[1]), Integer.parseInt(cl[2])));
+           jPanel4.add(p);
+          jPanel2.setVisible(false);        
        jPanel4.setVisible(true);
        timer.stop();
        timerEcran.stop();
@@ -309,6 +309,8 @@ public class Experience1 extends javax.swing.JFrame {
        }
     }
     public final void initaliserQuestRep(){
+       
+        nbrClickmr=0;
         if(next == (this.reponses.size()-1)) jButton1.setText("Fin !");
       listCh.clear();
         jPanel2.setVisible(true);
@@ -317,7 +319,8 @@ public class Experience1 extends javax.swing.JFrame {
         nbrClick=0;
            reponseT.setQuestions(reponses);
           jPanel3.removeAll();
-          jPanel3.repaint();
+           jPanel3.repaint();
+          
            if(cfg.getEmplacement()==1 || cfg.getEmplacement()==2 || cfg.getEmplacement()==3){
                jLabel6.setText(this.reponses.get(next).getQuestion());
            }else if(cfg.getEmplacement()==4){
@@ -401,6 +404,7 @@ public class Experience1 extends javax.swing.JFrame {
            for(int i=0 ;i< pp.size();i++){
                final JRadioButton j = new JRadioButton();
                  j.setText(pp.get(i));
+                 j.setFont(new Font("Arial",Font.PLAIN, 15));
                j.addActionListener(new ActionListener() {
 
                    @Override
@@ -426,6 +430,7 @@ public class Experience1 extends javax.swing.JFrame {
            for(int i=0 ;i< pp.size();i++){
                final JCheckBox j = new JCheckBox();
                  j.setText(pp.get(i));
+                 j.setFont(new Font("Arial",Font.PLAIN, 15));
                j.addActionListener(new ActionListener() {
 
                    @Override
@@ -440,18 +445,35 @@ public class Experience1 extends javax.swing.JFrame {
                jPanel3.add(j);
            }
            }else if (reponses.get(next)instanceof QuestionCommentaire){
-                this.rer="Rien";
+                this.rer="";
                  listCh.clear();
-              t= new JTextField();
-               
-                t.setText("");
+                 
+             JTextField  tt= new JTextField();
+            
+               tt.addKeyListener(new KeyListener() {
+
+                    @Override
+                    public void keyTyped(KeyEvent e) {
+                        rer = rer + e.getKeyChar();
+                         }
+
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+                       }
+
+                    @Override
+                    public void keyReleased(KeyEvent e) {
+                         }
+                });
+                tt.setText("");
              Dimension d = new Dimension();
-            d.setSize(60,30 );
-            t.setPreferredSize(d);
-            t.setAlignmentY(1000);
-               jPanel3.add(t);
+            d.setSize(200,30 );
+            tt.setPreferredSize(d);
+          
+               jPanel3.add(tt);
+             
            }else if (reponses.get(next)instanceof QuestionEchelle){
-                
+                nbrClickmr=0;
                 nbrClick=0;
                  listCh.clear();
               final QuestionEchelle echelle= (QuestionEchelle)reponses.get(next);
@@ -480,7 +502,7 @@ public class Experience1 extends javax.swing.JFrame {
                     public void stateChanged(ChangeEvent e) {
                        rer= echelle.getAffichageText().get(jSliderOne.getValue());
                        if(rer.isEmpty()){
-                           rer = "Valeur ="+(jSliderOne.getValue() + echelle.getDe()) + " dans ["+echelle.getDe()+","+echelle.getA()+"]";
+                           rer = "Valeur ="+(jSliderOne.getValue() + echelle.getDe()) + "/"+echelle.getDe()+"/"+echelle.getA();
                        }
                         
                     }
@@ -490,12 +512,19 @@ public class Experience1 extends javax.swing.JFrame {
 
                     @Override
                     public void mouseReleased(MouseEvent e) {
-                        nbrClick++;
+                      
                         }
 
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                      
+                      final BasicSliderUI ui = (BasicSliderUI) jSliderOne.getUI();
+     
+           
+            
+                Point p = e.getPoint();
+                int value = ui.valueForXPosition(p.x);
+                 jSliderOne.setValue(value);
+                 nbrClick++;
                     
                          }
 
@@ -523,10 +552,12 @@ public class Experience1 extends javax.swing.JFrame {
           jPanel3.setVisible(false);
           jPanel10.setVisible(true);
                   }
+          
            
-           this.pack();
            timerEcran.stop();
            timer.stop();
+           jPanel2.setVisible(false); 
+           jPanel2.setVisible(true); 
            if(this.reponses.get(next).getMedia().equals("image")){
            timer.setDelay(lancer.verifierDurer());
            
@@ -619,7 +650,10 @@ public class Experience1 extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel5 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -636,14 +670,23 @@ public class Experience1 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
+        jPanel5.setPreferredSize(new java.awt.Dimension(818, 918));
         jPanel5.setLayout(new java.awt.CardLayout());
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setLayout(new java.awt.BorderLayout());
+        jPanel5.add(jPanel4, "card3");
+
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setPreferredSize(new java.awt.Dimension(818, 818));
+
+        jLabel5.setText("jLabel5");
+        jPanel2.add(jLabel5);
 
         jLabel6.setText("ddddd");
 
@@ -680,7 +723,7 @@ public class Experience1 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -699,8 +742,8 @@ public class Experience1 extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
 
         jPanel6.add(jPanel7, "card3");
@@ -721,7 +764,7 @@ public class Experience1 extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         jPanel6.add(jPanel8, "card4");
@@ -751,64 +794,71 @@ public class Experience1 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        jButton3.setText("Arrêter l'Experience");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addGap(18, 18, 18)
                                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(jLabel1))))
-                        .addGap(86, 86, 86))))
+                        .addGap(76, 76, 76)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(39, 39, 39))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
                 .addComponent(jLabel7)
                 .addGap(39, 39, 39)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel5.add(jPanel2, "card2");
+        jPanel2.add(jPanel11);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setLayout(new java.awt.BorderLayout());
-        jPanel5.add(jPanel4, "card3");
+        jLabel8.setText("jLabel8");
+        jPanel2.add(jLabel8);
+
+        jPanel5.add(jPanel2, "card2");
 
         getContentPane().add(jPanel5, java.awt.BorderLayout.CENTER);
 
@@ -830,9 +880,9 @@ public class Experience1 extends javax.swing.JFrame {
            if(rer.isEmpty())rer="Rien";
            reponseT.addReponse(rer);
        }
-       else if(reponses.get(next)instanceof QuestionCommentaire) reponseT.addReponse(t.getText());
+       
        else reponseT.addReponse(rer);
-       reponseT.addNbrClick(nbrClick);
+       reponseT.addNbrClick(nbrClick+nbrClickmr);
        
        
      if( this.reponses.get(next).getMedia().equals("son")){
@@ -873,6 +923,22 @@ public class Experience1 extends javax.swing.JFrame {
        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        timer.stop();
+        timerEcran.stop();
+        if( this.reponses.get(next).getMedia().equals("son")){
+          
+         mediaPlayer.stop();
+     }if( this.reponses.get(next).getMedia().equals("video")){
+         mediaPlayer.stop();
+     }
+       LancementExperience e=new LancementExperience();
+               e.setVisible(true);
+               e.setLocationRelativeTo(null);
+       this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -899,13 +965,16 @@ public class Experience1 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Experience1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                Experience1 ep= new Experience1(null,null);
                 ep.setVisible(true);
-                ep.setLocationRelativeTo(null);
+              
             }
         });
     }
@@ -914,14 +983,18 @@ public class Experience1 extends javax.swing.JFrame {
     private java.awt.Canvas canvas1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -931,6 +1004,20 @@ public class Experience1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
+
+    private void initialiserColeur() {
+        jPanel1.setBackground(lancer.getColor());
+        jPanel10.setBackground(lancer.getColor());
+                jPanel11.setBackground(lancer.getColor());
+                jPanel2.setBackground(lancer.getColor());
+                jPanel3.setBackground(lancer.getColor());
+                jPanel4.setBackground(lancer.getColor());
+                jPanel5.setBackground(lancer.getColor());
+                jPanel6.setBackground(lancer.getColor());
+                jPanel7.setBackground(lancer.getColor());
+                jPanel8.setBackground(lancer.getColor());
+                jPanel9.setBackground(lancer.getColor());
+        }
 
  
 
